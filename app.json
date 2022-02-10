@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "urheilukelloappi",
+    "scheme": "exp",
     "slug": "urheilukelloappi",
     "version": "1.0.0",
     "orientation": "portrait",
