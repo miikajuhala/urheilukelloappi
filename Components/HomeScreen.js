@@ -17,6 +17,6 @@ const authorize =()=> {
         title="Login to strava"
         onPress={() => authorize()}
       />
-      </View>
+      </View> 
     );
   }
