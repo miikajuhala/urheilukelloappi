@@ -5,7 +5,7 @@ import { View, Text, Button, Image, Linking } from 'react-native';
 export default function HomeScreen({navigation}) {
 
 const authorize =()=> { 
-    Linking.openURL('https://www.strava.com/oauth/authorize?client_id=76865&response_type=code&redirect_uri=http://localhost&approval_prompt=force&scope=read')
+    // Linking.openURL('https://www.strava.com/oauth/authorize?client_id=76865&response_type=code&redirect_uri=http://localhost&approval_prompt=force&scope=read')
 
 }
 
