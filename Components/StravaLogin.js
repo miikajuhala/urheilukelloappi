@@ -30,7 +30,7 @@ export default function StravaLogin() {
       if (response?.type === 'success') {
         const { code } = response.params;
 
-        axios.post("http://172.20.10.4:3000/fetchtokens",{
+        axios.get("http://172.20.10.4:3000/fetchtokens",{
           params:{ token: code},
         })
         .then(res =>{
