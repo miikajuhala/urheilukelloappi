@@ -15,7 +15,9 @@ const authorize =()=> {
         <Image source={{uri: 'https://is5-ssl.mzstatic.com/image/thumb/Purple116/v4/d7/21/45/d72145f3-aedd-5497-cd7b-801720f5050f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png'}}  style={{width: 49, height: 49}} ></Image>
         <Button
         title="Login to strava"
-        onPress={() => authorize()}
+        onPress={
+        () => authorize()
+        }
       />
       </View> 
     );
