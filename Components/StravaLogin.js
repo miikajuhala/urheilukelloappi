@@ -24,24 +24,31 @@ export default function StravaLogin() {
     discovery
   );
   //You are not currently signed in to Expo on your development machine. As a result, the redirect URL for AuthSession will be "https://auth.expo.io/@anonymous/urheilukelloappi-da7944ca-3e21-4830-9938-442ff046f0fc". If you are using an OAuth provider that requires adding redirect URLs to an allow list, we recommend that you do not add this URL -- instead, you should sign in to Expo to acquire a unique redirect URL. Additionally, if you do decide to publish this app using Expo, you will need to register an account to do it.
-    if (response?.type === 'success') {
-      const { code } = response.params;
+   
 
-      axios.get("http://172.20.10.4:3000/fetchtokens",{
-        params:{ token: code},
-      })
-      .then(res =>{
-        console.log("res: "+res.data.accesstoken)
-      })
-    }
+    React.useEffect(() => {
+      if (response?.type === 'success') {
+        const { code } = response.params;
+
+        axios.post("http://172.20.10.4:3000/fetchtokens",{
+          params:{ token: code},
+        })
+        .then(res =>{
+          console.log("res: "+res.data.athleteid)
+          //todo: universal save and remember storage -> save id
+
+        })
+
+        }
+    }, [response]);
   
-  return (
+  return ( 
     <Button
       disabled={!request}
       title="Login"
       onPress={() => {
         promptAsync();
-      }}
+        }}
     />
   );
 }

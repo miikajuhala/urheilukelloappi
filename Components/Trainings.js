@@ -9,6 +9,12 @@ export default function Trainings({navigation}) {
         <Button
         title="Go to Home"
         onPress={() => navigation.navigate('Home')}/>
+
+
+
+
+
+
       </View>
     );
   }
