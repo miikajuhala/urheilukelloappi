@@ -16,7 +16,7 @@ const discovery = {
 export default function StravaLogin() { 
   const [request, response, promptAsync] = useAuthRequest(
     {
-      clientId: '76865',
+      clientId: '76865', 
       scopes: ['activity:read_all'],
        redirectUri: "exp://127.0.0.1:19000/redirect", //productissa expon oma redirect osote
     
@@ -31,7 +31,7 @@ export default function StravaLogin() {
         const { code } = response.params;
 
         axios.get("http://172.20.10.4:3000/fetchtokens",{
-          params:{ token: code},
+          params:{ token: code}, 
         })
         .then(res =>{
           console.log("res: "+res.data.athleteid)
