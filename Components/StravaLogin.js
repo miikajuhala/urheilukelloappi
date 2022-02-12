@@ -13,7 +13,7 @@ const discovery = {
   revocationEndpoint: 'https://www.strava.com/oauth/deauthorize',
 };
 
-export default function StravaLogin() {
+export default function StravaLogin() { 
   const [request, response, promptAsync] = useAuthRequest(
     {
       clientId: '76865',
