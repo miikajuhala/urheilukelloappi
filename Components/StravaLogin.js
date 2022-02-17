@@ -30,7 +30,7 @@ export default function StravaLogin({navigation}) {
     if (response?.type === 'success') {
 
       const { code } = response.params;
-      axios.get("http://172.20.10.3:8080/exchange_token",{
+      axios.get("https://jakko.herokuapp.com/exchange_token",{
         params:{ code: code},
       })
       .then(res =>{
