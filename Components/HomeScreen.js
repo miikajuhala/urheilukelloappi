@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button, Image, Linking } from 'react-native';
+import { StyleSheet, View, Text, Button, Image, Linking } from 'react-native';
 import StravaLogin from './StravaLogin';
 
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button, FlatList } from 'react-native';
+import { StyleSheet, View, Text, Button, FlatList } from 'react-native';
 import { Storage, sessionStorage } from '../Classes/Storage'
 import axios from 'axios';
 
@@ -23,7 +23,7 @@ export default function Trainings({navigation}) {
   }
 
   const renderItem = ({item}) => {
-    return <View><Text>{item.name}, {item.distance}</Text></View>
+    return <View styles={styles}><Text>{item.name}, {item.distance}</Text></View>
   }
 
     return (
@@ -47,3 +47,11 @@ export default function Trainings({navigation}) {
       </View>
     );
   }
+
+  const styles = StyleSheet.create({
+    item: {
+      flex: 1,
+      backgroundColor:'#A52A2A',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }})
