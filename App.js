@@ -6,7 +6,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Trainings from './Components/Trainings';
 import StravaLogin from './Components/StravaLogin';
 import HomeScreen from './Components/HomeScreen';
-import Login from './Components/Login';
+import LoginG from './Components/LoginG';
+
 
 
 
@@ -20,7 +21,8 @@ export default function App() {
       <Drawer.Navigator>
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Trainings" component={Trainings} />
-      <Drawer.Screen name="Login" component={Login} />
+      <Drawer.Screen name="Login Google" component={LoginG} />
+
       {/* <Drawer.Screen name="StravaLogin" component={StravaLogin} /> */}
     </Drawer.Navigator>
     </NavigationContainer>
