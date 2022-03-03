@@ -51,7 +51,7 @@ export default function GoogleLogin({navigation}) {
             googleUser.idToken,
             googleUser.accessToken
         );
-  
+   
         // Sign in with credential from the Google user.
         signInWithCredential(auth, credential)
         .then(
