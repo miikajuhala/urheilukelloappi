@@ -73,6 +73,7 @@ async function signInWithGoogleAsync() {
   try {
       const result = await Google.logInAsync({
         behavior: "web",
+        androidClientId: '705784980272-a04vd6g1igijbnoh6h6bvvsu3mknr9oh.apps.googleusercontent.com',
         iosClientId: '435632025856-hoe4vok2rmfigeguodt34tnnmkj4ll5d.apps.googleusercontent.com',
         scopes: ['profile', 'email'],
       });
