@@ -42,12 +42,18 @@ export default function StravaLogin({navigation}) {
     }
   
   return (
-     
+     <>
     <Button
       disabled={!request}
       title="Login"
       onPress={promptAsync}
     />
+<Button
+      title="to Google login "
+      onPress={()=>navigation.navigate('GoogleLogin')}
+    />
+
+    </>
   );
 }
 
