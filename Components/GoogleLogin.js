@@ -55,7 +55,7 @@ export default function GoogleLogin({navigation}) {
         // Sign in with credential from the Google user.
         signInWithCredential(auth, credential)
         .then(
-          //save tokens
+          //Create user and save tokens to user
           //learn to use tokens to authenticate in future
 
         ).catch((error) => {
