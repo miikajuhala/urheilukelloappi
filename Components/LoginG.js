@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { initializeApp } from 'firebase/app';
 import * as Google from 'expo-google-app-auth';
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import { getAuth, onAuthStateChanged, signInWithCredential, GoogleAuthProvider} from "firebase/auth";
-const auth = getAuth();
-import { initializeApp } from 'firebase/app';
+
+
 import { Text } from 'react-native-elements';
 // // import { getAuth, GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
 
@@ -21,7 +22,7 @@ const firebaseConfig = {
   measurementId: "G-MDF1RC8EE5"
 };
 
-//Initialize Firebase
+// Initialize Firebase
 initializeApp(firebaseConfig);
 
 // WebBrowser.maybeCompleteAuthSession();
@@ -30,6 +31,7 @@ initializeApp(firebaseConfig);
 
 
 export default function LoginG({navigation}) {
+  const auth = getAuth();
 
   function isUserEqual(googleUser, firebaseUser) {
     if (firebaseUser) {

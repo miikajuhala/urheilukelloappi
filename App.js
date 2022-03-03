@@ -20,7 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Trainings" component={Trainings} />
+      {/* <Drawer.Screen name="Trainings" component={Trainings} /> */}
       <Drawer.Screen name="Login Google" component={LoginG} />
 
       {/* <Drawer.Screen name="StravaLogin" component={StravaLogin} /> */}

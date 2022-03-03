@@ -18,7 +18,7 @@ export default function StravaLogin() {
     {
       clientId: '76865', 
       scopes: ['activity:read_all'],
-       redirectUri: "exp://127.0.0.1:19000/redirect", //productissa expon oma redirect osote
+      redirectUri: "exp://127.0.0.1:19000/redirect", //productissa expon oma redirect osote
     
     },
     discovery
