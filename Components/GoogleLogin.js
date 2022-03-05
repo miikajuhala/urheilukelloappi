@@ -3,8 +3,8 @@ import { initializeApp } from 'firebase/app';
 import * as Google from 'expo-google-app-auth';
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { FontAwesome5 } from '@expo/vector-icons';
-
-import { getAuth, onAuthStateChanged, signInWithCredential, GoogleAuthProvider} from "firebase/auth";
+import { getDatabase, push, ref} from "firebase/database";
+import { getAuth, onAuthStateChanged, signInWithCredential, GoogleAuthProvider,  } from "firebase/auth";
 
 
 import { Text } from 'react-native-elements';
@@ -24,7 +24,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app=initializeApp(firebaseConfig);
 
 // WebBrowser.maybeCompleteAuthSession();
 
@@ -32,7 +32,9 @@ initializeApp(firebaseConfig);
 
 
 export default function GoogleLogin({navigation}) {
+  const database = getDatabase(app);
   const auth = getAuth();
+
 
   function isUserEqual(googleUser, firebaseUser) {
     if (firebaseUser) {
@@ -54,7 +56,19 @@ export default function GoogleLogin({navigation}) {
    
         // Sign in with credential from the Google user.
         signInWithCredential(auth, credential)
-        .then(
+        .then(result=>{
+          console.log("------------------------------------------------")
+          console.log(result) 
+          push(
+            ref(database, 'users1'),{
+              'displayName': result._tokenResponse.displayName,
+              'email': result._tokenResponse.email,
+              'oauthIdToken': result._tokenResponse.oauthIdToken,
+              'oauthAccessToken': result._tokenResponse.oauthAccessToken,
+              'photoUrl': result._tokenResponse.photoUrl
+            }
+          )
+        }
           //Create user and save tokens to user
           //learn to use tokens to authenticate in future
 
